@@ -1,0 +1,15 @@
+{
+  "api_key": {
+    "display_name": "Freshdesk API key",
+    "description": "Please enter Freshdesk API key",
+    "type": "text",
+    "required": true,
+    "secure": true
+  },
+  "notification_to": {
+    "display_name": "Agent email for notification",
+    "description": "Please enter any agent's email to notify for reminder",
+    "type": "text",
+    "required": true
+  }
+}

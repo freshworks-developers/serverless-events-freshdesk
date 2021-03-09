@@ -1,25 +1,11 @@
-## Freshdesk App Project
+# Introductions to Serverless (ft. Freshdesk)
 
-Congratulations on creating your App Project! Feel free to replace this text with your project description.
+These are the resource files needed for a Introductions for Serverless tutorial from Freshworks.
 
-### Project folder structure explained
+## Introduction for using Serverless events
 
-    .
-    ├── README.md                  This file.
-    ├── config                     Installation parameter configs.
-    │   ├── iparams.json           Installation parameter config in English language.
-    │   └── iparam_test_data.json  Installation parameter data for local testing.
-    └── manifest.json              Project manifest.
-    └── server                     Business logic for remote request and event handlers.
-        ├── lib
-        │   └── handle-response.js
-        ├── server.js
-        └── test_data
-            ├── onAppInstall.json
-            ├── onAppUninstall.json
-            ├── onContactCreate.json
-            ├── onContactUpdate.json
-            ├── onConversationCreate.json
-            ├── onExternalEvent.json
-            ├── onTicketCreate.json
-            └── onTicketUpdate.json
+These are common features available for all the products and it will be consumed more frequently for regular use-cases around any event that occur in Freshdesk or any third-party application and events that are expected to run at specific case and time by the app. [In this tutorial](https://developer.freshworks.com/tutorials), we will explore what are the features are availble in the Serverless environment and how to use them.
+
+## Issues?
+
+If you find a mistake, please [file an issue](https://github.com/freshworks-developers/serverless-events-freshdesk/issues/new). Thanks!

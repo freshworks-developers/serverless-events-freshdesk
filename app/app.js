@@ -9,18 +9,25 @@ function showNotification(type, message) {
 };
 
 function deleteSchedule() {
-    const properties = {
-        ticket_id: 1
-    };
-    client.request.invoke('deleteSchedule', properties).then(function (data) {
-        console.info('Ticket create successfull');
-        console.info(JSON.stringify(data));
-        showNotification('success', `Ticket created successfully! Ticket ID: ${data.response.data.id}`);
-    }).catch(function (error) {
-        console.error('Ticket create error');
-        console.error(JSON.stringify(error));
-        showNotification('danger', 'Failed to create ticket.');
-    });
+    client.data.get("ticket").then(
+        function (data) {
+            client.request.invoke('deleteSchedule', { ticket_id: data.ticket.id }).then(function (data) {
+                console.info('Ticket create successfull');
+                console.info(JSON.stringify(data));
+                showNotification('success', `Ticket created successfully! Ticket ID: ${data.response.data.id}`);
+            }).catch(function (error) {
+                console.error('Ticket create error');
+                console.error(JSON.stringify(error));
+                showNotification('danger', 'Failed to create ticket.');
+            });
+        },
+        function (error) {
+            console.error('Error: Failed to get ticket information');
+            console.error(error);
+            showNotification('danger', 'Failed to get ticket information.');
+        }
+    );
+
 };
 
 function onDocumentReady() {
